@@ -58,9 +58,6 @@ async function main() {
 
   const userInfo = await connection.getAccountInfo(userAddress)
   console.log('userInfo', userInfo)
-  // if(userInfo?.data) {
-  //   console.log('deserialized', MintLayout.decode(userInfo?.data))
-  // }
 
   const tokenInfo = await connection.getAccountInfo(tokenAddress)
   console.log('tokenInfo', tokenInfo)
@@ -68,6 +65,7 @@ async function main() {
     console.log('deserialized', MintLayout.decode(tokenInfo?.data))
   }
   const tokenDataInfo = await connection.getAccountInfo(tokenDataAddress)
+  console.log('tokenDataInfo', tokenDataInfo)
   if(tokenDataInfo?.data) {
     console.log('deserialized', TokenAccountLayout.decode(tokenDataInfo?.data))
   }
